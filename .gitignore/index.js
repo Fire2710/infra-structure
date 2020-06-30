@@ -18,9 +18,8 @@ client.on('ready', () => {
       const embed = new MessageEmbed()
         .setTitle("Erreur")
         .setDescription(":warning: une erreur s'est produite pendant l'execution de cette commande !")
-        .addField("Informations supplémentaires", "La commande que vous avez essayer d'utiliser n'est pas encore prête à l'usage !")
+        .addField("Informations supplémentaires", `La commande que vous avez essayer d'utiliser n'est pas encore prête à l'usage !\n Requête envoyé par **${message.author}**`)
         .setColor(0xEE3F3F)
-        .setFooter(`Requête envoyer par ${message.author.name}`)
       message.channel.send(embed);
   }
   });
