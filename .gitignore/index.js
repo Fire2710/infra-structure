@@ -19,7 +19,7 @@ client.on('ready', () => {
         .setTitle("Erreur")
         .setDescription("<:4077_warning:702240781741719603> une erreur s'est produite pendant l'execution de cette commande !")
         .addField("Informations supplémentaires", "La commande que vous avez essayer d'utiliser n'est pas encore prête à l'usage !")
-        .setColor('EE3F3F')
+        .setColor(0xEE3F3F)
         .setFooter(`Requête envoyer par ${message.author}`)
       message.channel.send(embed);
   }
