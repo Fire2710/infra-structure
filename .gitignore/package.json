@@ -1,0 +1,14 @@
+{
+  "name": "infra-structure",
+  "version": "1.0.0",
+  "description": "Un bot d'une technologie suprieur à la normal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Null_#0001",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
