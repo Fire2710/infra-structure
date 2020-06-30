@@ -17,10 +17,10 @@ client.on('ready', () => {
   if (message.content === prefix + "help") {
       const embed = new MessageEmbed()
         .setTitle("Erreur")
-        .setDescription("<:4077_warning:702240781741719603> une erreur s'est produite pendant l'execution de cette commande !")
+        .setDescription(":warning: une erreur s'est produite pendant l'execution de cette commande !")
         .addField("Informations supplémentaires", "La commande que vous avez essayer d'utiliser n'est pas encore prête à l'usage !")
         .setColor(0xEE3F3F)
-        .setFooter(`Requête envoyer par ${message.author}`)
+        .setFooter(`Requête envoyer par ${message.author.name}`)
       message.channel.send(embed);
   }
   });
