@@ -1,7 +1,8 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, MessageEmbed } = require('discord.js');
+const client = new Client();
 const prefix = ".";
 
+// Create an instance of a Discord client
 client.on('ready', () => {
     console.log('I am ready!');
   });
