@@ -14,7 +14,7 @@ client.on('ready', () => {
       message.channel.send("<:bruh:726217332632059937>");
     }
   if (message.content === prefix + "help") {
-    var embed = new Discord.RichEmbed()
+      const embed = new MessageEmbed()
         .setTitle("Erreur")
         .setDescription("<:4077_warning:702240781741719603> une erreur s'est produite pendant l'execution de cette commande !")
         .addField("Informations supplémentaires", "La commande que vous avez essayer d'utiliser n'est pas encore prête à l'usage !")
