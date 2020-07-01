@@ -1,9 +1,7 @@
 const fs = require('fs');
 const { Client, MessageEmbed, Collection } = require('discord.js');
 const { TOKEN, PREFIX } = require('./config');
-const prefix = ".";
 
-// Create an instance of a Discord client
 const client = new Client();
 client.commands = new Collection();
 
@@ -29,4 +27,4 @@ client.on('ready', () => {
     client.commands.get(command).execute(message, args);
   });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
