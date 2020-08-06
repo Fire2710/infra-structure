@@ -1,30 +1,26 @@
-const fs = require('fs');
-const { Client, MessageEmbed, Collection } = require('discord.js');
-const { PREFIX } = require('./config');
-
-const client = new Client();
-client.commands = new Collection();
-
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('js'));
-
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  client.commands.set(command.name, command);
-  console.log(`Commande chargée : ${command.name}`);
-}
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const PREFIX = "/";
 
 client.on('ready', () => {
-    console.log('I am ready!');
-  });
-  
-  client.on('message', message => {
-    if (!message.content.startsWith(PREFIX) || message.author.bot) return;
+  console.log(`Logged in as ${client.user.tag}!`);
+});
 
-    const args = message.content.slice(PREFIX.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+client.on('message', msg => {
+  if(msg.content[0] === PREFIX) {
+    if(msg.content === PREFIX + 'verify') {
+      
+      let role = msg.guild.roles.find('name', '✅ • Vérifié')
+      
+      if(msg.member.roles.find('name', '✅ • Vérifié')) {
+        msg.member.reply("Vous avez déjà ce rôle");
+      }
+      else {
+        msg.member.addrole(role)
+      }
+    }
+  }
 
-    if (!client.commands.has(command)) return;
-    client.commands.get(command).execute(client, message, args);
-  });
+    
 
 client.login(process.env.TOKEN);
